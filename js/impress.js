@@ -326,6 +326,12 @@
             } );
         };
 
+        // `recompute` API Reset steps data properties
+        var recompute = function() {
+            steps = $$( ".step", root );
+            steps.forEach( initStep );
+        };
+
         // `init` API function that initializes (and runs) the presentation.
         var init = function() {
             if ( initialized ) { return; }
@@ -657,7 +663,8 @@
             init: init,
             goto: goto,
             next: next,
-            prev: prev
+            prev: prev,
+            recompute: recompute
         } );
 
     };
